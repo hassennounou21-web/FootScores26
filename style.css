@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  direction: rtl;
+  text-align: right;
+}
+
+.header {
+  background: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.header img.logo {
+  height: 50px;
+}
+
+.header-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.header-links a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.news-tabs {
+  background: #eee;
+  padding: 10px;
+  display: flex;
+}
+
+.news-tabs a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.news-tabs a.active {
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.news-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.news-card span {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.day-section {
+  margin-bottom: 20px;
+}
+
+.day-header {
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.matches {
+  display: none;
+  margin-top: 10px;
+}
+.header-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;       /* حجم ثابت */
+  margin-left: 30px;
+  padding: 8px 14px;     /* لا تغير عند hover */
+  border-radius: 6px;
+  transition: background-color 0.3s; /* فقط الخلفية تتغير */
+}
+
+.header-links a:hover,
+.header-links a.active {
+  color: #f94144;        /* اللون فقط يتغير */
+  background-color: #ffffff10; /* أو أي لون خفيف */
+  /* لا تغير padding أو font-size */
+}
+
+.logo {
+  width: 80px;           /* حجم ثابت */
+  height: 80px;
+}

@@ -1,0 +1,36 @@
+{
+  "yesterday": [
+    {
+      "home": {"name": "الأبطال", "logo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"},
+      "away": {"name": "المتوكلين", "logo": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"},
+      "score": "2 - 1",
+      "time": "FT",
+      "status": "finished"
+    }
+  ],
+  "today": [
+    {
+      "home": {"name": "الإتحاد", "logo": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg"},
+      "away": {"name": "المتوكلين", "logo": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"},
+      "score": "2 - 1",
+      "time": "12",
+      "status": "live"
+    },
+    {
+      "home": {"name": "الإتحاد", "logo": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"},
+      "away": {"name": "النصر", "logo": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"},
+      "score": "0-0",
+      "time": "20:45",
+      "status": "upcoming"
+    }
+  ],
+  "tomorrow": [
+    {
+      "home": {"name": "الأبطال", "logo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"},
+      "away": {"name": "المتوكلين", "logo": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"},
+      "score": "0-0",
+      "time": "18:30",
+      "status": "upcoming"
+    }
+  ]
+}

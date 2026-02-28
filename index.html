@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>FootScores26</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background-color: #0d1b2a;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      flex-shrink: 0;
+    }
+
+    .header-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      margin-left: 30px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .header-links a:hover,
+    .header-links a.active {
+      background-color: #f94144;
+      color: #0d1b2a;
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* ===== DAY SECTION ===== */
+    .day-section {
+      margin-bottom: 30px;
+    }
+
+    .day-header {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 10px 15px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .matches {
+      display: block;
+    }
+
+    /* ===== MATCH CARD ===== */
+    .match {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      min-height: 120px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    /* ===== TEAM ===== */
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+    }
+
+    .team img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .team a {
+      text-decoration: none;
+      color: #0d1b2a;
+      font-size: 18px;
+    }
+
+    /* ===== CENTER ===== */
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 80px;
+    }
+
+    .time {
+      font-size: 16px;
+      font-weight: bold;
+      color: gray;
+    }
+
+    .time.upcoming {
+      color: #264653;
+    }
+
+    .time.live {
+      color: #f94144;
+    }
+
+    .time.live::before {
+      content: "● ";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    .score {
+      font-size: 22px;
+      font-weight: bold;
+      color: #0d1b2a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <img src="images/logo.png.jpeg" class="logo">
+
+    <div class="header-links">
+      <a href="index.html" class="active">نتائج</a>
+      <a href="news.html">أخبار</a>
+      <a href="championship.html">بطولات</a>
+      <a href="about.html">حول</a>
+    </div>
+  </div>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="content">
+
+    <!-- ===== YESTERDAY ===== -->
+    <div class="day-section">
+      <div class="day-header" onclick="toggleSection(this)">أمس</div>
+      <div class="matches">
+
+        <div class="match">
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg">
+            <a href="#">الأبطال</a>
+          </div>
+
+          <div class="center">
+            <div class="time">FT</div>
+            <div class="score">2 - 1</div>
+          </div>
+
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg">
+            <a href="#">المتوكلين</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== TODAY ===== -->
+    <div class="day-section">
+      <div class="day-header" onclick="toggleSection(this)">اليوم</div>
+      <div class="matches">
+
+        <div class="match" data-status="live" data-minute="12">
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg">
+            <a href="#">الإتحاد</a>
+          </div>
+
+          <div class="center">
+            <div class="time live">12'</div>
+            <div class="score">1 - 0</div>
+          </div>
+
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg">
+            <a href="#">المتوكلين</a>
+          </div>
+        </div>
+
+        <div class="match">
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg">
+            <a href="#">النصر</a>
+          </div>
+
+          <div class="center">
+            <div class="time upcoming">21:00</div>
+            <div class="score">-</div>
+          </div>
+
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg">
+            <a href="#">الأبطال</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== TOMORROW ===== -->
+    <div class="day-section">
+      <div class="day-header" onclick="toggleSection(this)">غدًا</div>
+      <div class="matches">
+
+        <div class="match">
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg">
+            <a href="#">الأبطال</a>
+          </div>
+
+          <div class="center">
+            <div class="time upcoming">18:30</div>
+            <div class="score">-</div>
+          </div>
+
+          <div class="team">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg">
+            <a href="#">المتوكلين</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    function toggleSection(header) {
+      const matches = header.nextElementSibling;
+      matches.style.display =
+        matches.style.display === "none" ? "block" : "none";
+    }
+
+    function updateLiveMatches() {
+      const liveMatches = document.querySelectorAll('.match[data-status="live"]');
+
+      liveMatches.forEach(match => {
+        let minute = parseInt(match.dataset.minute, 10);
+        const timeEl = match.querySelector('.time');
+
+        if (minute < 90) {
+          minute++;
+          match.dataset.minute = minute;
+
+          if (minute === 45) {
+            timeEl.textContent = "شوط";
+          } else {
+            timeEl.textContent = minute + "'";
+          }
+        } else {
+          timeEl.textContent = "FT";
+          timeEl.classList.remove("live");
+          match.removeAttribute("data-status");
+        }
+      });
+    }
+
+    setInterval(updateLiveMatches, 60000);
+  </script>
+
+</body>
+</html>
